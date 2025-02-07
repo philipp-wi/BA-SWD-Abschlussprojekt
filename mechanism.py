@@ -68,10 +68,12 @@ class Mechanism:
 
         # Apply rotation
         rotated_position = rotation_matrix @ relative_position
-        new_position = rotated_position + center_of_rotation
 
-        # Update the joint with the new position
-        self.joints[self.rotating_joint_index] = Mechanism.Joint(new_position[0], new_position[1], rotating_joint.pinned)
+        new_x = rotated_position[0] + center_of_rotation[0]
+        new_y = rotated_position[1] + center_of_rotation[1]
+
+        rotating_joint.x = new_x
+        rotating_joint.y = new_y
 
     def simulate_mechanism(self):
         joint_differences = self.calculate_joint_differences()
@@ -82,9 +84,11 @@ class Mechanism:
             "rod_lengths": rod_lengths
         }
     
-    def debug_joints(self):
+    def debug_print(self):
         for i, joint in enumerate(self.joints):
             print(f"Joint {i}: {joint}")
+        for u, rod in enumerate(self.rods):
+            print(f"Rod {u}: {rod}")
 
 
 if __name__ == "__main__":
@@ -110,7 +114,7 @@ if __name__ == "__main__":
 
     # Debugging: Print initial joint positions
     print("\n--- Initial Joint Positions ---")
-    mechanism.debug_joints()
+    mechanism.debug_print()
 
     # Test 1: Initial configuration
     print("\nTest with Theta = arctan(10/5)")
@@ -128,7 +132,7 @@ if __name__ == "__main__":
 
     # Debugging: Print updated joint positions
     print("\n--- Updated Joint Positions ---")
-    mechanism.debug_joints()
+    mechanism.debug_print()
 
     result = mechanism.simulate_mechanism()
     expected_rod_lengths = [36.40054945, 44.1005] # Expected result from the slides on page 17
