@@ -244,7 +244,6 @@ if __name__ == "__main__":
         ic(e)
         error_counter += 1
 
-
     # Test 3.4: Incorrect degrees of freedom
     print("\n--- 3.4 DoF Error ---")
     joints_invalid_4 = [
