@@ -20,7 +20,7 @@
             "x": -25,
             "y": 10,
             "pinned": false,
-            "rotating_joint": true
+            "rotating_joint": false
         },
         {
             "joint_name": "p3",
