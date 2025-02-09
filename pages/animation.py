@@ -89,6 +89,10 @@ def run_animation():
             solver = NumericSolver(mechanism)
             gif_path = generate_animation(mechanism, solver)
             st.image(gif_path)
+
+            # download mechanism as GIF
+            with open(gif_path, "rb") as file:
+                st.download_button(label="Download Animation", data=file, file_name="mechanism_animation.gif", mime="image/gif")
         # display error message    
         except Exception as e:
             st.error(f"Error: {e}")
