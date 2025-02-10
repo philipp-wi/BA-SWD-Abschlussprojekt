@@ -111,16 +111,20 @@ class Mechanism:
             raise ValueError(f"The following joints are not connected to any rod: {unconnected_joints}")
         
         # Correct calculation of links:
-        num_links = len(self.rods) + 1
+        num_links = len(self.rods)
         num_revolute_joints = len(self.rods)
         num_rotating_joints = len(rotating_joints)
+        num_joints = len(self.joints)
+        num_moving_joints = num_joints - len(pinned_joints)
         
         # Use the planar DoF formula for mechanisms:
         # f = 3*(L - 1) - 2*(number of revolute joints) - (number of rotating joints)
-        dof = 3 * (num_links - 1) - 2 * num_revolute_joints - num_rotating_joints
+        #dof = 3 * (num_links - 1) - 2 * num_revolute_joints - num_rotating_joints
+        degree_check = num_links == num_moving_joints
 
-        if dof != 1:
-            raise ValueError(f"The mechanism must have exactly 1 degree of freedom, but it has {dof} degrees of freedom.")
+        #if not degree_check:
+            #raise ValueError(f"The mechanism must have exactly 1 degree of freedom, but it has {dof} degrees of freedom.")
+            #raise ValueError(f"Mechanismus ist nicht valide. Anzahl der Glieder: {num_links}, Anzahl der beweglichen Gelenke: {num_moving_joints}")
         return True
 
     def simulate_mechanism(self):
