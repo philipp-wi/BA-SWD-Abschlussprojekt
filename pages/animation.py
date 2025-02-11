@@ -183,7 +183,7 @@ def grafic_engine():
 
     # Simulation parameters.
     st.markdown("### Simulation Parameters")
-    sim_resolution = st.number_input("Simulation resolution (degrees per step):", min_value=0.1, value=1.0, step=0.1)
+    sim_resolution = st.number_input("Simulation resolution (degrees per step):", min_value=0.1, value=10.0, step=0.1)
     framerate = st.number_input("Framerate (frames per second):", min_value=1, value=60, step=1)
     interval = 1000 / framerate
 
@@ -243,7 +243,7 @@ def grafic_engine():
         end_time = time.time()
         time_taken = end_time - start_time
         st.write(f"Time taken: {time_taken:.2f} seconds")
-        if sim_resolution == 1.0 and framerate == 60:
+        if sim_resolution == 10.0 and framerate == 60:
             update_leaderboard(selected_config, time_taken)
         st.image(gif_path, caption="Mechanism Animation")
         with open(gif_path, "rb") as file:
