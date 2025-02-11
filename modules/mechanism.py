@@ -94,8 +94,8 @@ class Mechanism:
     def config_check(self):
         # Check if there is exactly one rotating joint
         rotating_joints = [joint for joint in self.joints if joint.rotate_center is not None]
-        if len(rotating_joints) != 1:
-            raise ValueError("There must be exactly one rotating joint in the mechanism.")
+        if len(rotating_joints) < 1:
+            raise ValueError("There must be at least one rotating joint in the mechanism.")
         
         # Check if there is at least one pinned joint (statically fixed joint)
         pinned_joints = [joint for joint in self.joints if joint.pinned]
@@ -113,7 +113,7 @@ class Mechanism:
         # Correct calculation of links:
         num_links = len(self.rods)
         num_revolute_joints = len(self.rods)
-        num_rotating_joints = len(rotating_joints)
+        #num_rotating_joints = len(rotating_joints)
         num_joints = len(self.joints)
         num_moving_joints = num_joints - len(pinned_joints)
         

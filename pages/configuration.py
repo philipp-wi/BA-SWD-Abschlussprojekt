@@ -31,9 +31,9 @@ def mechanism_configuration():
 
     # check if only one rotating joint checked
     joint_error = False
-    if edited_joints["rotating_joint"].sum() > 1:
+    if edited_joints["rotating_joint"].sum() < 1:
         joint_error = True
-        st.error("only one rotating joint allowed!")
+        st.error("At least one joint must be a rotating joint!")
     else:
         joint_error = False
     
