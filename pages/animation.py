@@ -33,7 +33,7 @@ def calculate_solved_coords(mechanism, solver, start_deg, end_deg, num_frames): 
     return solved, angles
 
 def save_moving_coords_csv(solved_coords, angles): # saves moving coordinates to a CSV file
-    csv_path = "moving_coords.csv"
+    csv_path = "outputs/moving_coords.csv"
     with open(csv_path, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["joint_nr", "angle", "x_pos", "y_pos"])
@@ -88,7 +88,7 @@ def draw_frame(mechanism, coords, x_lim, y_lim): # draws a single frame of the m
     #for (x, y) in coords:
     #    ax.plot(x, y, 'go')
     
-    img_path = "frame.png"
+    img_path = "outputs/frame.png"
     fig.savefig(img_path)
     plt.close(fig)
     return img_path
@@ -135,7 +135,7 @@ def generate_animation(mechanism, solved_coords, interval): # generates an anima
     
     ani = animation.FuncAnimation(fig, update, frames=frames, init_func=initialize_lines,
                                   blit=True, interval=interval)
-    gif_path = "animation.gif"
+    gif_path = "outputs/animation.gif"
     ani.save(gif_path, writer="pillow")
     plt.close(fig)
     return gif_path
