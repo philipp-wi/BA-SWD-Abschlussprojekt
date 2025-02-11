@@ -29,9 +29,13 @@ def mechanism_configuration():
         key="joints_editor"
     )
 
-    # this does inform the user there are mote than one rotating joint, but not prevent it
+    # check if only one rotating joint checked
+    joint_error = False
     if edited_joints["rotating_joint"].sum() > 1:
+        joint_error = True
         st.error("only one rotating joint allowed!")
+    else:
+        joint_error = False
     
     # dropdown to select rotation center from already defined joints
     joint_names = edited_joints["joint_name"].tolist()
@@ -54,10 +58,14 @@ def mechanism_configuration():
         key="rods_editor"
     )
 
-    # check if any rod has the same start and end joint (same as joint only informs not prevent)
+    # check if any rod has the same start and end joint
+    rods_error = False
     for _, row in edited_rods.iterrows():
         if row["start_joint"] == row["end_joint"]:
+            rods_error = True
             st.error(f"Rod cannot have the same start and end joint: {row['start_joint']}")
+        else:
+            rods_error = False
 
     
     # function to export the configuration as a JSON file
@@ -104,7 +112,10 @@ def mechanism_configuration():
     
     # export button to save the configuration
     if st.button("Export to JSON"):
-        export_to_json()
+        if joint_error or rods_error:
+            st.error("Fix the errors before exporting!")
+        else:
+            export_to_json()
     
     st.markdown("---")
     
