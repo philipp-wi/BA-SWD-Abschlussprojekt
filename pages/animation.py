@@ -1,6 +1,8 @@
 import os
 import sys
 import csv
+import json
+import time
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -138,6 +140,28 @@ def generate_animation(mechanism, solved_coords, interval): # generates an anima
     plt.close(fig)
     return gif_path
 
+def load_leaderboard():
+    leaderboard_path = "leaderboard.json"
+    if os.path.exists(leaderboard_path):
+        with open(leaderboard_path, "r") as file:
+            return json.load(file)
+    return {}
+
+def save_leaderboard(leaderboard):
+    leaderboard_path = "leaderboard.json"
+    with open(leaderboard_path, "w") as file:
+        json.dump(leaderboard, file, indent=4)
+
+
+def update_leaderboard(config_name, time_taken):
+    leaderboard = load_leaderboard()
+    machine_name = os.getenv('COMPUTERNAME', 'Unknown')
+    if config_name not in leaderboard:
+        leaderboard[config_name] = {}
+    if machine_name not in leaderboard[config_name] or leaderboard[config_name][machine_name] > time_taken:
+        leaderboard[config_name][machine_name] = time_taken
+    save_leaderboard(leaderboard)
+
 def grafic_engine():
     st.title("Mechanism Visualization")
     
@@ -212,10 +236,15 @@ def grafic_engine():
             st.error("Invalid start or end angle")
             return
         num_frames = int((end_angle - start_angle) / sim_resolution)
-
+        start_time = time.time()
         solved_coords, angle = calculate_solved_coords(mechanism, solver, start_angle, end_angle, num_frames)
         x_lim, y_lim = get_axis_limits(solved_coords)
         gif_path = generate_animation(mechanism, solved_coords, interval)
+        end_time = time.time()
+        time_taken = end_time - start_time
+        st.write(f"Time taken: {time_taken:.2f} seconds")
+        if sim_resolution == 1.0 and framerate == 60:
+            update_leaderboard(selected_config, time_taken)
         st.image(gif_path, caption="Mechanism Animation")
         with open(gif_path, "rb") as file:
             st.download_button(label="Download Animation",
