@@ -1,14 +1,11 @@
 {
+    "Strandbeest-Bein-Doppel_configuration.json": {
+        "VAC-MAINPC": 3.5589165687561035
+    },
     "Strandbeest-Bein_configuration.json": {
-        "VAC-MAINPC": 1.480374813079834,
-        "PHILIPP": 1.9594359397888184
+        "VAC-MAINPC": 2.952707290649414
     },
     "Viergelenkkette_configuration.json": {
-        "VAC-MAINPC": 1.3896005153656006,
-        "PHILIPP": 2.5885801315307617
-    },
-    "Strandbeest-Bein-Doppel_configuration.json": {
-        "VAC-MAINPC": 1.8273065090179443,
-        "PHILIPP": 2.2493810653686523
+        "VAC-MAINPC": 2.796982526779175
     }
 }
