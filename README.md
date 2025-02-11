@@ -20,12 +20,12 @@ This Streamlit application creates simulations of mechanical mechanism that cons
     - Viergelenkkette
     - Invalid configuration (to show error at validation)
 
-### Implemented Features
+### Link to Streamlit application
 Link: still has to be deployed
 
 
 ### Animation of Strandbeest-Leg
 
-<p align="center">
+<p>
   <img src="outputs/animation.gif" width="45%" />
 </p
