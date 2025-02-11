@@ -1,5 +1,5 @@
 {
-    "configuration_name": "Viergelenkkette",
+    "configuration_name": "Invalid_config",
     "joints": [
         {
             "joint_name": "p0",

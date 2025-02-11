@@ -1,5 +1,5 @@
 {
-    "configuration_name": "Strandbeest-Bein",
+    "configuration_name": "Strandbeest-Bein-Doppel",
     "joints": [
         {
             "joint_name": "rot_cent",
