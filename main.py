@@ -4,10 +4,17 @@ import json
 
 st.title("Mechanism Simulator")
 
-st.write("Here you can simulate a mechanism by defining its configuration and then running the simulation.")
+st.write("**This application allows you to simulate mechanical mechanism**")
+st.markdown(""" - In the configuration tab you can define joints and rods to create a custom mechanism. Strandbeest and Viergelenkkette configurations are already available.""")
+st.markdown("""
+- In the animation tab you can select a configuration and simulate the mechanism.
+  - Animation of Mechanism (GIF)
+  - Generate frame of mechanism at specific degree (PNG)
+  - Save joint coordinates (CSV)          
+""")
 
 st.title("Leaderboard:")
-st.write("Here you can see the times of the PC's trying to simulate various configurations.")
+st.write("Here you can see the times of the PC's trying to simulate various configurations. Rendering times will only be ranked if you use default settings (simulation resolution = 10.00 and framerate = 60.00).")
 
 # Load leaderboard data from JSON file
 with open('leaderboard.json', 'r') as file:
