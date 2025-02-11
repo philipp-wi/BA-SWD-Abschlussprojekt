@@ -15,10 +15,10 @@ def mechanism_configuration():
             # joint_name, x-coords, y-coords, select pinned/static joint, select rotating joint 
             columns=["joint_name", "x", "y", "pinned", "rotating_joint"],
             data=[
-                ["p0", 0, 0, True, False], 
-                ["p1", 10, 35, False, False], 
-                ["p2", -25, 10, False, True],
-                ["p3", -30, 0, True, False]     # keep example values in the inital table, otherwise the table might bug
+                ["p0", 0.0, 0.0, True, False], 
+                ["p1", 10.0, 35.0, False, False], 
+                ["p2", -25.0, 10.0, False, True],
+                ["p3", -30.0, 0.0, True, False]     # keep example values in the initial table, otherwise the table might bug
             ]
         )
     
