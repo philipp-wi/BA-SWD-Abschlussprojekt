@@ -1,0 +1,193 @@
+{
+    "configuration_name": "Strandbeest-Bein",
+    "joints": [
+        {
+            "joint_name": "rot_cent",
+            "x": 0.0,
+            "y": 0.0,
+            "pinned": true,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "A",
+            "x": -38.0,
+            "y": -7.8,
+            "pinned": true,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "I",
+            "x": 11.68,
+            "y": 9.41,
+            "pinned": false,
+            "rotating_joint": true
+        },
+        {
+            "joint_name": "C",
+            "x": -20.93,
+            "y": -43.2,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "F",
+            "x": -32.24,
+            "y": 33.3,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "H",
+            "x": -77.27,
+            "y": 0.34,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "K",
+            "x": -56.17,
+            "y": -32.94,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "N",
+            "x": -27.03,
+            "y": -91.82,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "A_Mirrored",
+            "x": 38.0,
+            "y": -7.8,
+            "pinned": true,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "I_Mirrored",
+            "x": -11.68,
+            "y": 9.41,
+            "pinned": false,
+            "rotating_joint": true
+        },
+        {
+            "joint_name": "C_Mirrored",
+            "x": 20.93,
+            "y": -43.2,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "F_Mirrored",
+            "x": 32.24,
+            "y": 33.3,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "H_Mirrored",
+            "x": 77.27,
+            "y": 0.34,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "K_Mirrored",
+            "x": 56.17,
+            "y": -32.94,
+            "pinned": false,
+            "rotating_joint": false
+        },
+        {
+            "joint_name": "N_Mirrored",
+            "x": 27.03,
+            "y": -91.82,
+            "pinned": false,
+            "rotating_joint": false
+        }
+    ],
+    "rotation_center": "rot_cent",
+    "rods": [
+        {
+            "start_joint": "F",
+            "end_joint": "I"
+        },
+        {
+            "start_joint": "I",
+            "end_joint": "C"
+        },
+        {
+            "start_joint": "C",
+            "end_joint": "N"
+        },
+        {
+            "start_joint": "N",
+            "end_joint": "K"
+        },
+        {
+            "start_joint": "K",
+            "end_joint": "C"
+        },
+        {
+            "start_joint": "H",
+            "end_joint": "K"
+        },
+        {
+            "start_joint": "H",
+            "end_joint": "A"
+        },
+        {
+            "start_joint": "A",
+            "end_joint": "C"
+        },
+        {
+            "start_joint": "H",
+            "end_joint": "F"
+        },
+        {
+            "start_joint": "A",
+            "end_joint": "F"
+        },
+        {
+            "start_joint": "F_Mirrored",
+            "end_joint": "I_Mirrored"
+        },
+        {
+            "start_joint": "I_Mirrored",
+            "end_joint": "C_Mirrored"
+        },
+        {
+            "start_joint": "C_Mirrored",
+            "end_joint": "N_Mirrored"
+        },
+        {
+            "start_joint": "N_Mirrored",
+            "end_joint": "K_Mirrored"
+        },
+        {
+            "start_joint": "K_Mirrored",
+            "end_joint": "C_Mirrored"
+        },
+        {
+            "start_joint": "H_Mirrored",
+            "end_joint": "K_Mirrored"
+        },
+        {
+            "start_joint": "H_Mirrored",
+            "end_joint": "A_Mirrored"
+        },
+        {
+            "start_joint": "A_Mirrored",
+            "end_joint": "C_Mirrored"
+        },
+        {
+            "start_joint": "H_Mirrored",
+            "end_joint": "F_Mirrored"
+        },
+        {
+            "start_joint": "A_Mirrored",
+            "end_joint": "F_Mirrored"
+        }
+    ]
+}
