@@ -5,8 +5,8 @@ This Streamlit application creates simulations of mechanical mechanism that cons
 
 ### Implemented Features
 - Streamlit Web-UI with two tabs:
-    - configuration (create your own mechanism)
-    - animation (visualize selected mechanism)
+    - Configuration (create your own mechanism)
+    - Visualization (visualize selected mechanism)
 - Positions-kinematics will be calculated from 0° to 360°
 - Validation of mechanism
 - Save mechanism configuration (JSON-file)
