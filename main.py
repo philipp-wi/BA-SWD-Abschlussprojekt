@@ -14,7 +14,7 @@ st.markdown("""
 """)
 
 st.title("Leaderboard:")
-st.write("Here you can see the times of the PC's trying to simulate various configurations. Rendering times will only be ranked if you use default settings (simulation resolution = 10.00 and framerate = 60.00).")
+st.write("Here you can see the times of the PC's trying to simulate various configurations. Rendering times will only be ranked if you use default settings (simulation resolution = 5.00 and framerate = 240).")
 
 # Load leaderboard data from JSON file
 with open('leaderboard.json', 'r') as file:
