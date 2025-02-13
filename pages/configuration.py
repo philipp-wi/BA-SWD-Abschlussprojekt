@@ -109,12 +109,28 @@ def mechanism_configuration():
         st.success(f"Configuration saved!")
     
     # export button to save the configuration
-    if st.button("Export to JSON"):
+    if st.button("Save configuration"):
         if joint_error or rods_error:
             st.error("Fix the errors before exporting!")
         else:
             export_to_json()
-    
+
+    # download configuration as JSON
+    if config_name.strip():
+        output_data = {
+            "configuration_name": config_name,
+            "joints": edited_joints.to_dict(orient="records"),
+            "rotation_center": rotation_center,
+            "rods": edited_rods.to_dict(orient="records")
+        }
+        json_string = json.dumps(output_data, indent=4)
+        st.download_button(
+            label="Download configuration as JSON",
+            data=json_string,
+            file_name=f"{config_name.replace(' ', '_')}_configuration.json",
+            mime="application/json"
+        )
+
     st.markdown("---")
     
     # configuration upload field
