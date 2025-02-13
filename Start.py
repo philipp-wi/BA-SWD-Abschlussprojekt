@@ -5,9 +5,9 @@ import json
 st.title("Mechanism Simulator")
 
 st.write("**This application allows you to simulate mechanical mechanism**")
-st.markdown(""" - In the configuration tab you can define joints and rods to create a custom mechanism. Strandbeest and Viergelenkkette configurations are already available.""")
+st.markdown(""" - In the configuration tab you can define joints and rods to create a custom mechanism. Strandbeest-Leg, double Strandbeest-Leg and Viergelenkkette configurations are already available.""")
 st.markdown("""
-- In the animation tab you can select a configuration and simulate the mechanism.
+- In the Visualization tab you can select a configuration and simulate the mechanism.
   - Animation of Mechanism (GIF)
   - Generate frame of mechanism at specific degree (PNG)
   - Save joint coordinates (CSV)          
