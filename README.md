@@ -14,15 +14,14 @@ This Streamlit application creates simulations of mechanical mechanism that cons
 - Create and download a frame at a chosen angle (PNG-file)
 - Export of joint coordinates for all angles (CSV-file)
 - Drag and Drop field to upload configurations
+- Leaderboard (shows rendering times of PC's)
 - The following predefined configurations are available
     - Strandbeest-Leg
     - Double Strandbeest-Leg
     - Viergelenkkette
-    - Invalid configuration (to show error at validation)
 
 ### Link to Streamlit application
-Link: still has to be deployed
-
+Link: [Mechanism Simulator](https://mechanism-simulator.streamlit.app/)
 
 ### Animation of Strandbeest-Leg
 
