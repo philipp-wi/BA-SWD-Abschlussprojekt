@@ -56,8 +56,7 @@ if __name__ == "__main__":
 
     print("\n--- Test 1: Import Simple Config (1 Moving Joint) ---")
 
-    #config_file = "../configurations/Viergelenkkette_configuration.json"
-    config_file = "../configurations/Invalide_config.json"
+    config_file = "configurations/Viergelenkkette_configuration.json"
     mechanism = load_mechanism_from_config(config_file)
 
     solver = NumericSolver(mechanism)

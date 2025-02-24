@@ -133,8 +133,7 @@ def generate_animation(mechanism, solved_coords, interval): # generates an anima
             line.set_data([sx, ex], [sy, ey])
         return rods_lines
     
-    ani = animation.FuncAnimation(fig, update, frames=frames, init_func=initialize_lines,
-                                  blit=True, interval=interval)
+    ani = animation.FuncAnimation(fig, update, frames=frames, init_func=initialize_lines, blit=True, interval=interval)
     gif_path = "outputs/animation.gif"
     ani.save(gif_path, writer="pillow")
     plt.close(fig)
@@ -151,7 +150,6 @@ def save_leaderboard(leaderboard):
     leaderboard_path = "leaderboard.json"
     with open(leaderboard_path, "w") as file:
         json.dump(leaderboard, file, indent=4)
-
 
 def update_leaderboard(config_name, time_taken):
     leaderboard = load_leaderboard()

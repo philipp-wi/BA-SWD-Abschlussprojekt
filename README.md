@@ -5,14 +5,14 @@ This Streamlit application creates simulations of mechanical mechanism that cons
 
 ### Implemented Features
 - Streamlit Web-UI with two tabs:
-    - Configuration (create your own mechanism)
+    - Config (create your own mechanism)
     - Visualization (visualize selected mechanism)
 - Positions-kinematics will be calculated from 0° to 360°
 - Validation of mechanism
-- Save mechanism configuration (JSON-file)
-- Animation can be saved (GIF-file)
+- Save and download mechanism configuration (JSON-file)
+- Animation can be saved and downloaded (GIF-file)
 - Create and download a frame at a chosen angle (PNG-file)
-- Export of joint coordinates for all angles (CSV-file)
+- Export of joint coordinates for all angles at choosen resolution (CSV-file)
 - Drag and Drop field to upload configurations
 - Leaderboard (shows rendering times of PC's)
 - The following predefined configurations are available
@@ -25,6 +25,6 @@ Link: [Mechanism Simulator](https://mechanism-simulator.streamlit.app/)
 
 ### Animation of Strandbeest-Leg
 
-<p>
-  <img src="outputs/animation.gif" width="45%" />
-</p
+<div style="text-align: center;">
+  <img src="outputs/double_strandbeest.gif"/>
+</div>
